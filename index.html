@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2> 💱Global currency converter</h2>
+            <p> convert between 150+ currencies with real-time rates</p>
+        </header>
+
+
+        <main class="converter-card">
+            <div class="input-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" value="100" step="0.01" placeholder="Enter amount">
+            </div>
+
+
+            <!--from currency-->
+            <div class="currency-row">
+                <div class="input-group">
+                    <label for="from-currency">From Currency</label>
+                    <div class="select-wrapper">
+                        <select id="from-currency" class="currency-select"></select>
+                        <div class="selected-flag" id="from-flag">us</div>
+                    </div>
+                </div>
+
+
+                <!--sawp button-->
+<button class="swap-button" id="swap-btn" title="swap-Currencies"><i class="fa-solid fa-right-left"></i></button>
+
+
+                <!-- to currency -->
+                    <div class="input-group">
+          <label for="to-currency">To Currency</label>
+          <div class="select-wrapper">
+              <select id="to-currency" class="currency-select"></select>
+              <div class="selected-flag" id="to-flag">IN</div>
+          </div>
+      </div>
+    </div>
+
+<!-- converting button -->
+ <div class="converter">
+ <button id="converter-btn" class="converter-button">Convert Currency</button></div>
+ 
+ 
+ <!-- result displaying -->
+<div id="result" class="result-card">
+    <div class="rate-info"><span id="exchange-rate">1USD = 83.25 INR</span> 
+    </div>
+    <div class="amount-display">
+        <span id="converted-amount">100 USD = 8,325.00 INR</span>
+    </div>
+  </div>
+          <div class="credit">Powered by ExchangeRate-API</br> Designed By Aishwarya Kurakula</div>
+   
+
+</main>
+
+  <!-- quick actions -->
+   <div class="quick-actions">
+    <h3><span><i class="fa-solid fa-fire"></i></span>Popular Conversions</h3>
+    <div class="quick-buttons">
+        <button class="quick-btn" data-from="USD" data-to="EUR">USD<span><i class="fa-solid fa-arrow-right"></i></span>EUR</button> 
+        <button class="quick-btn" data-from="USD" data-to="EUR">EUR<span><i class="fa-solid fa-arrow-right"></i></span>GBP</button> 
+        <button class="quick-btn" data-from="USD" data-to="EUR">USD<span><i class="fa-solid fa-arrow-right"></i></span>INR</button> 
+        <button class="quick-btn" data-from="USD" data-to="EUR">GBP<span><i class="fa-solid fa-arrow-right"></i></span>USD</button> 
+    </div>
+   
+
+
+        <!-- TIMESTAMP DIV -->
+  <span class="timestamp">
+      <span id="conversion-time">Converted: Just now</span>
+  </span>
+
+
+<!-- her-story -->
+<div class="history-section">
+    <h3><span><i class="fa-solid fa-clock-rotate-left"></i></span>Converstion-history</h3>
+    <div class="history-container" class="history-container"></div>
+</div>
+<button id="clear-history" class="clear-history-btn">Clear History</button>
+        </main>   
+    </div>
+    <script src="script.js</script>
+</body>
+</html>
